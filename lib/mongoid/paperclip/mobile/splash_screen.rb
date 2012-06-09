@@ -8,8 +8,10 @@ module Mongoid::Paperclip::Mobile::SplashScreen
         Rails.logger.warn ":style option for has_mobile_web_splash_screen :#{field} will be ignored."
       end
 
-      l_opts = landscape_styles.merge(options)
-      p_opts = portrait_styles.merge(options)
+      l_opts = options.merge(:styles => landscape_styles)
+      p_opts = options.merge(:styles => portrait_styles)
+
+
 
       #make sure that mongoid paperclip is included
       unless self.ancestors.include?(::Mongoid::Paperclip)
@@ -23,32 +25,31 @@ module Mongoid::Paperclip::Mobile::SplashScreen
     private
     def landscape_styles
       {
-          :ipad             => ['1024x748#', :png],
-          :ipad_retina      => ['2048x1496#', :png],
+          :ipad                => ['1024x748#', :png],
+          :ipad_retina         => ['2048x1496#', :png],
 
-          :android_rect_hdpi=> ['800x480#', :png],
-          :android_rect_ldpi=> ['400x240#', :png],
+          :android_rect_hdpi   => ['800x480#', :png],
+          :android_rect_ldpi   => ['400x240#', :png],
 
-          :android_square_hdpi=> ['800x480#', :png],
-          :android_square_mdpi=> ['480x320#', :png],
-          :android_square_ldpi=> ['320x240#', :png],
+          :android_square_hdpi => ['800x480#', :png],
+          :android_square_mdpi => ['480x320#', :png],
+          :android_square_ldpi => ['320x240#', :png],
       }
     end
 
     def portrait_styles
       {
-          :iphone         => ['320x460#',   :png],
-          :iphone_retina  => ['640x960#',   :png],
-          :ipad           => ['1024x748#',  :png],
-          :ipad_retina    => ['1536x2008#', :png],
+          :iphone              => ['320x460#', :png],
+          :iphone_retina       => ['640x960#', :png],
+          :ipad                => ['768x1004#', :png],
+          :ipad_retina         => ['1536x2008#', :png],
 
-          :android_rect_hdpi=> ['480x800#', :png],
-          :android_rect_ldpi=> ['240x400#', :png],
+          :android_rect_hdpi   => ['480x800#', :png],
+          :android_rect_ldpi   => ['240x400#', :png],
 
-          :android_square_hdpi=> ['480x800#', :png],
-          :android_square_mdpi=> ['320x480#', :png],
-          :android_square_ldpi=> ['240x320#', :png],
-
+          :android_square_hdpi => ['480x800#', :png],
+          :android_square_mdpi => ['320x480#', :png],
+          :android_square_ldpi => ['240x320#', :png],
       }
     end
   end

@@ -1,0 +1,23 @@
+require 'rbconfig'
+source 'http://rubygems.org'
+gem 'rails', '3.2.2'
+
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+
+gem 'joyride-rails', '~> 0.0.10', :require => 'joyride'
+
+gem 'haml'
+
+gem 'bson_ext'
+gem 'mongoid'
+
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'aws-s3',            :require => 'aws/s3'

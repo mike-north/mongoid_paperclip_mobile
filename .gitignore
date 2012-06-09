@@ -1,5 +1,6 @@
 .bundle/
 log/*.log
+.idea
 pkg/
 test/dummy/db/*.sqlite3
 test/dummy/log/*.log

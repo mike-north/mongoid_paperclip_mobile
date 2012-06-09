@@ -1,2 +1,2 @@
-MongoidPaperclipMobile::Engine.routes.draw do
+Mongoid::Paperclip::Mobile::Engine.routes.draw do
 end

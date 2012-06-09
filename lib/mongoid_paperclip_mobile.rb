@@ -1,4 +1,3 @@
 require "mongoid/paperclip/mobile/engine"
 
-module Mongoid::Paperclip::Mobile
-end
+require "mongoid/paperclip/mobile"
