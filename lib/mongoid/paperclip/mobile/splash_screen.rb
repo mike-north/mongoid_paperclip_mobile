@@ -8,8 +8,12 @@ module Mongoid::Paperclip::Mobile::SplashScreen
         Rails.logger.warn ":style option for has_mobile_web_splash_screen :#{field} will be ignored."
       end
 
-      l_opts = options.merge(:styles => landscape_styles)
-      p_opts = options.merge(:styles => portrait_styles)
+      l_opts = options.merge({  :styles => landscape_styles,
+                                :default_url       => placeholder_image_url("1024x748", :text => "Missing")
+                             })
+      p_opts = options.merge({  :styles => portrait_styles,
+                                :default_url       => placeholder_image_url("768x1004", :text => "Missing")
+                             })
 
 
 

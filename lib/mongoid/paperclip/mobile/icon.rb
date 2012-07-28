@@ -1,14 +1,16 @@
 module Mongoid::Paperclip::Mobile::Icon
   extend ActiveSupport::Concern
 
-
   module ClassMethods
     def has_mobile_web_icon(field, options={ })
       if options[:styles]
         Rails.logger.warn ":style option for has_mobile_web_icon :#{field} will be ignored."
       end
 
-      opts = options.merge(:styles => mobile_styles)
+      opts = options.merge({
+                               :styles => mobile_styles,
+                               :default_url       => placeholder_image_url("96x96", :text => "Missing")
+      })
 
 
       #make sure that mongoid paperclip is included
